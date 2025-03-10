@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">@color/light_blue</color>
+
+    <color name="splash_screen_background">@color/default_dark_theme_background</color>
+    <color name="splash_screen_icon_text">@color/white</color>
+
+    <color name="week_calendar_view_text">@color/white</color>
+
+    <color name="search_view_background">@color/dark_gray</color>
+</resources>
