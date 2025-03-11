@@ -34,21 +34,21 @@ class MainActivity : AppCompatActivity() {
             .setKeepOnScreenCondition { !userAuthDataViewModel.isUserAuthDataLoaded }
         setContentView(R.layout.activity_main)
 
-        if (!userAuthDataViewModel.isUserAuthDataLoaded) {
-            lifecycleScope.launch {
-                repeatOnLifecycle(Lifecycle.State.STARTED) {
-                    val userAuthData = userAuthDataViewModel.userAuthData.first()
-                    if (userAuthData != null) {
-                        navigateToMainFragment()
-                        delay(1000)
-                    }
-                    userAuthDataViewModel.isUserAuthDataLoaded = true
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                userAuthDataViewModel.userAuthData.first()?.let {
+                    navigateToMainFragment()
+                    delay(1000)
                 }
+                userAuthDataViewModel.isUserAuthDataLoaded = true
             }
         }
     }
 
     private fun navigateToMainFragment() {
-        findNavController.navigate(R.id.action_userRoleSelectionFragment_to_mainFragment)
+        val currentDestinationId = findNavController.currentDestination?.id
+        if (currentDestinationId == R.id.userRoleSelectionFragment) {
+            findNavController.navigate(R.id.action_userRoleSelectionFragment_to_mainFragment)
+        }
     }
 }
