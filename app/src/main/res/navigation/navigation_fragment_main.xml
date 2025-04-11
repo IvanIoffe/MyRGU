@@ -24,6 +24,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_scheduleFragment_to_aboutAppFragment"
+            app:destination="@id/aboutAppFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -53,5 +60,25 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="com.application.myrgu.about_app.AboutAppFragment"
+        android:label="fragment_about_app"
+        tools:layout="@layout/fragment_about_app" >
+        <action
+            android:id="@+id/action_aboutAppFragment_to_developersFragment"
+            app:destination="@id/developersFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/developersFragment"
+        android:name="com.application.myrgu.about_app.DevelopersFragment"
+        android:label="fragment_developers"
+        tools:layout="@layout/fragment_developers" />
 
 </navigation>

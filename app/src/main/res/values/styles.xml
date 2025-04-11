@@ -50,4 +50,29 @@
         <item name="android:paddingVertical">8dp</item>
     </style>
 
+    <style name="TextAppearance.ItemAboutApp" parent="TextAppearance.AppCompat">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:focusable">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.Developer" parent="TextAppearance.AppCompat">
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.DeveloperRole" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

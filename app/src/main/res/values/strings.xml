@@ -24,8 +24,9 @@
     <!-- ScheduleFragment -->
     <string name="title_scheduleFragment">Расписание,</string>
     <string name="group_prefix">гр.</string>
-    <string name="title_allGroupsFragment">Расписание всех групп</string>
-    <string name="title_allTeachersFragment">Расписание всех преподавателей</string>
+    <string name="schedule_all_groups">Расписание всех групп</string>
+    <string name="schedule_all_teachers">Расписание всех преподавателей</string>
+    <string name="about_app">О приложении</string>
     <string name="logout">Выход</string>
 
     <!-- AllGroupsFragment -->
@@ -33,5 +34,13 @@
 
     <!-- AllTeachersFragment -->
     <string name="teacher_fullname_query_hint">Введите ФИО преподавателя</string>
+
+    <!-- AboutAppFragment -->
+    <string name="app_version">Версия:</string>
+    <string name="developers">Разработчики</string>
+
+    <!-- DevelopersFragment -->
+    <string name="app">Приложение</string>
+    <string name="app_developer">Иоффе Иван</string>
 
 </resources>

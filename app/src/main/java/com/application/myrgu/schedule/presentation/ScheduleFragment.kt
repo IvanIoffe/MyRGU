@@ -151,7 +151,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
     }
 
     private fun setupMenu() {
-        binding.toolbarScheduleFragment.inflateMenu(R.menu.menu_schedule_toolbar)
+        binding.toolbarScheduleFragment.inflateMenu(R.menu.menu_schedule_fragment_toolbar)
         binding.toolbarScheduleFragment.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.allGroupsFragment -> {
@@ -161,6 +161,11 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
 
                 R.id.allTeachersFragment -> {
                     findNavController().navigate(R.id.action_scheduleFragment_to_allTeachersFragment)
+                    true
+                }
+
+                R.id.aboutAppFragment -> {
+                    findNavController().navigate(R.id.action_scheduleFragment_to_aboutAppFragment)
                     true
                 }
 
