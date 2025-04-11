@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.application.myrgu.R
 
 class TeacherShimmerAdapter(
-    private val itemCount: Int,
+    private val itemCount: Int = 50,
 ) : RecyclerView.Adapter<TeacherShimmerAdapter.TeacherShimmerViewHolder>() {
 
     class TeacherShimmerViewHolder(view: View) : RecyclerView.ViewHolder(view)

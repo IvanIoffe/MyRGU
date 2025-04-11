@@ -13,8 +13,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.application.myrgu.R
 import com.application.myrgu.all_groups.domain.model.AllGroups
 import com.application.myrgu.all_groups.domain.model.Group
@@ -52,7 +50,8 @@ class AllGroupsFragment : Fragment(), GroupAdapter.Listener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupRecyclerView()
+        setupRecyclerViewAllGroupsShimmer()
+        setupRecyclerViewAllGroups()
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -95,12 +94,14 @@ class AllGroupsFragment : Fragment(), GroupAdapter.Listener {
         )
     }
 
-    private fun setupRecyclerView() {
+    private fun setupRecyclerViewAllGroupsShimmer() {
+        val shimmerAdapter = GroupShimmerAdapter()
+        binding.recyclerViewAllGroupsShimmer.adapter = shimmerAdapter
+    }
+
+    private fun setupRecyclerViewAllGroups() {
         groupAdapter = GroupAdapter(this)
-        binding.recyclerViewAllGroups.apply {
-            addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
-            adapter = groupAdapter
-        }
+        binding.recyclerViewAllGroups.adapter = groupAdapter
     }
 
     private fun handleAllGroupsState(state: Result<AllGroups>) {
@@ -117,16 +118,16 @@ class AllGroupsFragment : Fragment(), GroupAdapter.Listener {
 
         binding.searchViewAllGroupsFragment.visibility = View.VISIBLE
         binding.allGroupsFragmentContent.visibility = View.VISIBLE
-        binding.allGroupsFragmentLoading.root.visibility = View.INVISIBLE
+        binding.allGroupsFragmentLoading.visibility = View.INVISIBLE
     }
 
     private fun handleAllGroupsErrorState() {
-        binding.allGroupsFragmentLoading.root.visibility = View.INVISIBLE
+        binding.allGroupsFragmentLoading.visibility = View.INVISIBLE
         binding.allGroupsFragmentError.root.visibility = View.VISIBLE
     }
 
     private fun handleAllGroupsLoadingState() {
-        binding.allGroupsFragmentLoading.root.visibility = View.VISIBLE
+        binding.allGroupsFragmentLoading.visibility = View.VISIBLE
         binding.allGroupsFragmentError.root.visibility = View.INVISIBLE
     }
 

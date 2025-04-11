@@ -30,9 +30,5 @@ class AboutAppFragment : Fragment() {
         binding.textViewDevelopers.setOnClickListener {
             findNavController().navigate(R.id.action_aboutAppFragment_to_developersFragment)
         }
-
-        binding.textViewOpenSourceLicenses.setOnClickListener {
-
-        }
     }
 }

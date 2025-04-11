@@ -100,7 +100,7 @@ class AllTeachersFragment : Fragment(), TeacherAdapter.Listener {
     }
 
     private fun setupRecyclerViewAllTeachersShimmer() {
-        val shimmerAdapter = TeacherShimmerAdapter(50)
+        val shimmerAdapter = TeacherShimmerAdapter()
         binding.recyclerViewAllTeachersShimmer.adapter = shimmerAdapter
     }
 
