@@ -35,7 +35,7 @@ fun UserAuthDataLocal.toUserAuthData() =
 
 fun UserRole.toPathParam(): String {
     return when(this) {
-        UserRole.GROUP -> "groupnumber"
-        UserRole.TEACHER -> "teacherlogin"
+        UserRole.GROUP -> "group_number"
+        UserRole.TEACHER -> "teacher_login"
     }
 }

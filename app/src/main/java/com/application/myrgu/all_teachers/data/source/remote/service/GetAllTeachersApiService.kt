@@ -5,6 +5,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface GetAllTeachersApiService {
-    @GET("teacherlist")
+    @GET("teacher_list")
     suspend fun getAllTeachers(): Response<AllTeachersRemote>
 }

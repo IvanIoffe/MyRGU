@@ -86,7 +86,7 @@ fun ScheduleForDayLocal.toScheduleForDay() =
 
 fun ScheduleType.toPathParam(): String {
     return when (this) {
-        ScheduleType.GROUP -> "schedulebygroupid"
-        ScheduleType.TEACHER -> "schedulebyteacherid"
+        ScheduleType.GROUP -> "schedule_by_group_id"
+        ScheduleType.TEACHER -> "schedule_by_teacher_id"
     }
 }
