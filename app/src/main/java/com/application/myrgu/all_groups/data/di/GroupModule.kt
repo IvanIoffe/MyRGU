@@ -7,7 +7,7 @@ import dagger.Binds
 import dagger.Module
 
 @Module(includes = [GroupRemoteSourceModule::class])
-interface GroupSourceModule {
+interface GroupModule {
 
     @Binds
     fun bindGroupRepositoryImpl(groupRepositoryImpl: GroupRepositoryImpl): GroupRepository

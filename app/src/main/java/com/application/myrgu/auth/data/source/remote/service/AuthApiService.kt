@@ -6,9 +6,9 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface AuthApiService {
-    @GET("auth_by_{user_role}/{login}")
+    @GET("auth_by_{endpoint}/{login}")
     suspend fun auth(
-        @Path("user_role") userRole: String,
+        @Path("endpoint") authEndpoint: String,
         @Path("login") login: String,
     ): Response<AuthResponseRemote>
 }

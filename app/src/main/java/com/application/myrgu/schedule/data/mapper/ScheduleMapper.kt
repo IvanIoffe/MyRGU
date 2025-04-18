@@ -36,7 +36,10 @@ fun ScheduleRemote.toSchedule(): Schedule {
     return Schedule(items = weeks)
 }
 
-fun ScheduleRemote.toScheduleLocal(scheduleKey: String, scheduleVersion: String): ScheduleLocal {
+fun ScheduleRemote.toScheduleLocal(
+    scheduleKey: String,
+    scheduleVersion: String,
+): ScheduleLocal {
     val groupedByWeek = schedule.groupBy { it.dateOfMonday }
 
     val weeks = groupedByWeek.map { (dateOfMonday, lessonsForWeek) ->
@@ -86,7 +89,7 @@ fun ScheduleForDayLocal.toScheduleForDay() =
 
 fun ScheduleType.toPathParam(): String {
     return when (this) {
-        ScheduleType.GROUP -> "schedule_by_group_id"
-        ScheduleType.TEACHER -> "schedule_by_teacher_id"
+        ScheduleType.GROUP -> "group_id"
+        ScheduleType.TEACHER -> "teacher_id"
     }
 }

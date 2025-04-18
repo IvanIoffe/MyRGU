@@ -2,7 +2,7 @@ package com.application.myrgu.core.data
 
 import retrofit2.Response
 
-suspend fun <T> apiRemoteRequest(call: suspend () -> Response<T>): T? {
+suspend fun <T> remoteRequest(call: suspend () -> Response<T>): T? {
     return try {
         val response = call()
 

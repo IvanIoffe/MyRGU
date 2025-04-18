@@ -15,7 +15,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.yield
 import java.time.LocalDate
 import javax.inject.Inject
 
@@ -36,7 +35,6 @@ class ScheduleViewModel @Inject constructor(
 
     fun getSchedule(scheduleRequest: ScheduleRequest) {
         viewModelScope.launch {
-            yield()
             getScheduleUseCase(scheduleRequest)
                 .onEach {
                     _state.value = it

@@ -8,9 +8,9 @@ import retrofit2.http.Query
 
 interface ScheduleApiService {
 
-    @GET("{schedule_type}/{user_id}")
+    @GET("schedule_by_{endpoint}/{user_id}")
     suspend fun getSchedule(
-        @Path("schedule_type") scheduleType: String,
+        @Path("endpoint") scheduleEndpoint: String,
         @Path("user_id") userId: Int,
         @Query("first_date") dateOfMondayFirst: String,
         @Query("second_date") dateOfMondaySecond: String,

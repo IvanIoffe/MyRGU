@@ -6,6 +6,7 @@ import com.application.myrgu.core.data.localRequestFlow
 import com.application.myrgu.schedule.data.source.local.dao.ScheduleDao
 import com.application.myrgu.schedule.data.source.local.model.ScheduleLocal
 import com.application.myrgu.schedule.data.source.local.model.ScheduleVersionLocal
+import com.application.myrgu.schedule.data.source.remote.model.ScheduleVersionRequest
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -15,7 +16,7 @@ class RoomScheduleLocalDataSource @Inject constructor(
 
     override fun getSchedule(scheduleKey: String): Flow<Result<ScheduleLocal>> {
         return localRequestFlow {
-            scheduleDao.getSchedule()
+            scheduleDao.getSchedule(scheduleKey)
         }
     }
 
@@ -23,9 +24,11 @@ class RoomScheduleLocalDataSource @Inject constructor(
         scheduleDao.saveSchedule(scheduleLocal)
     }
 
-    override suspend fun getScheduleVersion(scheduleKey: String): ScheduleVersionLocal? {
+    override suspend fun getScheduleVersion(scheduleVersionRequest: ScheduleVersionRequest): ScheduleVersionLocal? {
         return localRequest {
-            scheduleDao.getScheduleVersion(scheduleKey)
+            scheduleDao.getScheduleVersion(
+                scheduleKey = scheduleVersionRequest.scheduleType.name + scheduleVersionRequest.userId,
+            )
         }
     }
 }

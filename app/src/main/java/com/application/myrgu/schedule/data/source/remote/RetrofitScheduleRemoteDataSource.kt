@@ -1,11 +1,12 @@
 package com.application.myrgu.schedule.data.source.remote
 
 import com.application.myrgu.core.data.Result
-import com.application.myrgu.core.data.apiRemoteRequest
-import com.application.myrgu.core.data.apiRemoteRequestFlow
+import com.application.myrgu.core.data.remoteRequest
+import com.application.myrgu.core.data.remoteRequestFlow
 import com.application.myrgu.schedule.data.mapper.toPathParam
 import com.application.myrgu.schedule.data.source.remote.model.ScheduleRemote
 import com.application.myrgu.schedule.data.source.remote.model.ScheduleVersionRemote
+import com.application.myrgu.schedule.data.source.remote.model.ScheduleVersionRequest
 import com.application.myrgu.schedule.data.source.remote.service.ScheduleApiService
 import com.application.myrgu.schedule.data.source.remote.service.ScheduleVersionApiService
 import com.application.myrgu.schedule.domain.model.ScheduleRequest
@@ -19,9 +20,9 @@ class RetrofitScheduleRemoteDataSource @Inject constructor(
 ) : ScheduleRemoteDataSource {
 
     override fun getSchedule(scheduleRequest: ScheduleRequest): Flow<Result<ScheduleRemote>> {
-        return apiRemoteRequestFlow {
+        return remoteRequestFlow {
             scheduleApiService.getSchedule(
-                scheduleType = scheduleRequest.scheduleType.toPathParam(),
+                scheduleEndpoint = scheduleRequest.scheduleType.toPathParam(),
                 userId = scheduleRequest.userId,
                 dateOfMondayFirst = scheduleRequest.dateOfMondayFirst.format(dateTimeFormatter),
                 dateOfMondaySecond = scheduleRequest.dateOfMondaySecond.format(dateTimeFormatter),
@@ -29,9 +30,12 @@ class RetrofitScheduleRemoteDataSource @Inject constructor(
         }
     }
 
-    override suspend fun getScheduleVersion(scheduleKey: String): ScheduleVersionRemote? {
-        return apiRemoteRequest {
-            scheduleVersionApiService.getScheduleVersion(scheduleKey)
+    override suspend fun getScheduleVersion(scheduleVersionRequest: ScheduleVersionRequest): ScheduleVersionRemote? {
+        return remoteRequest {
+            scheduleVersionApiService.getScheduleVersion(
+                scheduleVersionEndpoint = scheduleVersionRequest.scheduleType.toPathParam(),
+                userId = scheduleVersionRequest.userId,
+            )
         }
     }
 }

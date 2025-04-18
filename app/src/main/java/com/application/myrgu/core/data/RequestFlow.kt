@@ -7,9 +7,8 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.serialization.json.Json
 import retrofit2.Response
-import java.net.SocketTimeoutException
 
-fun <T> apiRemoteRequestFlow(call: suspend () -> Response<T>): Flow<Result<T>> = flow {
+fun <T> remoteRequestFlow(call: suspend () -> Response<T>): Flow<Result<T>> = flow {
     emit(Result.Loading)
 
     try {
@@ -26,10 +25,8 @@ fun <T> apiRemoteRequestFlow(call: suspend () -> Response<T>): Flow<Result<T>> =
                 emit(Result.Error(parsedError.message))
             }
         }
-    } catch (e: SocketTimeoutException) {
-        emit(Result.Error("Ошибка подключения. Повторите попытку позже."))
     } catch (e: Exception) {
-        emit(Result.Error(e.message ?: e.toString()))
+        emit(Result.Error("Ошибка подключения. Повторите попытку позже."))
     }
 }.flowOn(Dispatchers.IO)
 

@@ -8,7 +8,7 @@ import dagger.Binds
 import dagger.Module
 
 @Module(includes = [ScheduleRemoteSourceModule::class, ScheduleLocalSourceModule::class])
-interface ScheduleSourceModule {
+interface ScheduleModule {
 
     @Binds
     fun bindScheduleRepositoryImpl(

@@ -3,7 +3,7 @@ package com.application.myrgu.all_groups.data.source.remote
 import com.application.myrgu.all_groups.data.source.remote.model.AllGroupsRemote
 import com.application.myrgu.all_groups.data.source.remote.service.AllGroupsApiService
 import com.application.myrgu.core.data.Result
-import com.application.myrgu.core.data.apiRemoteRequestFlow
+import com.application.myrgu.core.data.remoteRequestFlow
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -12,7 +12,7 @@ class RetrofitGroupRemoteDataSource @Inject constructor(
 ) : GroupRemoteDataSource {
 
     override fun getAllGroups(): Flow<Result<AllGroupsRemote>> {
-        return apiRemoteRequestFlow {
+        return remoteRequestFlow {
             allGroupsApiService.getAllGroups()
         }
     }

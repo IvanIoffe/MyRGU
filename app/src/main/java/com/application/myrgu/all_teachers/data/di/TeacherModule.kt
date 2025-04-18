@@ -7,7 +7,7 @@ import dagger.Binds
 import dagger.Module
 
 @Module(includes = [TeacherRemoteSourceModule::class])
-interface TeacherSourceModule {
+interface TeacherModule {
 
     @Binds
     fun bindTeacherRepositoryImpl(

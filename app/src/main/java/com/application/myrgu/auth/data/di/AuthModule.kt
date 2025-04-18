@@ -8,7 +8,7 @@ import dagger.Binds
 import dagger.Module
 
 @Module(includes = [AuthRemoteSourceModule::class, AuthLocalSourceModule::class])
-interface AuthSourceModule {
+interface AuthModule {
 
     @Binds
     fun bindAuthRepositoryImpl(authRepositoryImpl: AuthRepositoryImpl): AuthRepository

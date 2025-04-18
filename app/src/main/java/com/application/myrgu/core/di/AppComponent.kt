@@ -1,20 +1,20 @@
 package com.application.myrgu.core.di
 
 import android.content.Context
-import com.application.myrgu.auth.data.di.AuthSourceModule
+import com.application.myrgu.auth.data.di.AuthModule
 import com.application.myrgu.core.data.source.local.di.StorageModule
 import com.application.myrgu.core.data.source.remote.di.NetworkModule
-import com.application.myrgu.schedule.data.di.ScheduleSourceModule
-import com.application.myrgu.all_groups.data.di.GroupSourceModule
-import com.application.myrgu.all_teachers.data.di.TeacherSourceModule
+import com.application.myrgu.schedule.data.di.ScheduleModule
+import com.application.myrgu.all_groups.data.di.GroupModule
+import com.application.myrgu.all_teachers.data.di.TeacherModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Component(
     modules = [
-        NetworkModule::class, StorageModule::class, ViewModelModule::class, AuthSourceModule::class,
-        ScheduleSourceModule::class, GroupSourceModule::class, TeacherSourceModule::class,
+        NetworkModule::class, StorageModule::class, ViewModelModule::class, AuthModule::class,
+        ScheduleModule::class, GroupModule::class, TeacherModule::class,
     ]
 )
 @Singleton
