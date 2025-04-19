@@ -1,0 +1,23 @@
+<resources>
+    <style name="Base.Theme.MyRGU" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+
+        <item name="android:windowLightStatusBar">false</item>
+
+        <item name="snackbarStyle">@style/Snackbar</item>
+        <item name="snackbarTextViewStyle">@style/Snackbar.TextView</item>
+        <item name="snackbarButtonStyle">@style/Snackbar.Button</item>
+    </style>
+
+    <style name="Theme.MyRGU" parent="Base.Theme.MyRGU" />
+
+    <style name="Theme.Splash.Starting" parent="Theme.SplashScreen">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="windowSplashScreenBackground">@color/splash_screen_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_screen</item>
+        <item name="windowSplashScreenIconBackgroundColor">#00000000</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.MyRGU</item>
+    </style>
+
+</resources>

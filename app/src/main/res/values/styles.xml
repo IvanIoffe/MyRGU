@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Lesson.Time" parent="TextAppearance.AppCompat">
+        <item name="android:paddingVertical">1dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.Lesson.Info" parent="TextAppearance.AppCompat">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingVertical">2dp</item>
+        <item name="android:paddingEnd">5dp</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/button_text</item>
+    </style>
+
+    <style name="Snackbar" parent="@style/Widget.Material3.Snackbar">
+        <item name="backgroundTint">@color/primary</item>
+    </style>
+
+    <style name="Snackbar.TextView" parent="Widget.Material3.Snackbar.TextView">
+        <item name="android:textColor">@color/snackbar_textview_text</item>
+    </style>
+
+    <style name="Snackbar.Button" parent="@style/Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:textColor">@color/snackbar_button_text</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="SearchView.Toolbar" parent="Widget.Material3.SearchView.Toolbar">
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:background">@drawable/search_view_background</item>
+        <item name="android:closeIcon">@drawable/ic_close</item>
+        <item name="android:queryBackground">@android:color/transparent</item>>
+    </style>
+
+    <style name="WeekCalendarView">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingHorizontal">4dp</item>
+        <item name="cv_daySize">seventhWidth</item>
+    </style>
+
+    <style name="RecyclerViewSchedule">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:paddingVertical">8dp</item>
+    </style>
+
+    <style name="TextAppearance.ItemAboutApp" parent="TextAppearance.AppCompat">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:focusable">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.Developer" parent="TextAppearance.AppCompat">
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.DeveloperRole" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

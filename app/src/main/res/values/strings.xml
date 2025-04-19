@@ -1,0 +1,51 @@
+<resources>
+
+    <!-- Common -->
+    <string name="app_name">Мой РГУ</string>
+    <string name="rgu_logo">Логотип РГУ</string>
+    <string name="no_internet_connection_message">Нет подключения к сети. Данные могут быть не актуальными.</string>
+    <string name="clearly">Ясно</string>
+    <string name="loading_error_message">Ошибка загрузки. Проверьте подключение к сети и попробуйте снова.</string>
+    <string name="try_again">Повторить попытку</string>
+    <string name="no_result">Ничего не найдено</string>
+    <string name="no_data">Нет данных</string>
+
+    <!-- UserRoleSelectionFragment -->
+    <string name="auth_for_students">Вход для студентов</string>
+    <string name="auth_for_teachers">Вход для преподавателей</string>
+
+    <!-- AuthFragment -->
+    <string name="group_number_hint">Номер группы</string>
+    <string name="group_number_placeholder">Пример: 0001</string>
+    <string name="teacher_login_hint">Почта</string>
+    <string name="teacher_login_suffix_text">\@rsu-rzn.ru</string>
+    <string name="auth">Войти</string>
+    <string name="enter_data">Введите данные</string>
+
+    <!-- ScheduleFragment -->
+    <string name="title_scheduleFragment">Расписание,</string>
+    <string name="group_prefix">гр.</string>
+    <string name="no_schedule_this_day">На этот день пока нет расписания</string>
+    <string name="weekend">Выходной день</string>
+    <string name="no_lesson_type">Тип занятия не указан</string>
+    <string name="no_classroom">Аудитория не указана</string>
+    <string name="schedule_all_groups">Расписание всех групп</string>
+    <string name="schedule_all_teachers">Расписание всех преподавателей</string>
+    <string name="about_app">О приложении</string>
+    <string name="logout">Выход</string>
+
+    <!-- AllGroupsFragment -->
+    <string name="group_number_query_hint">Введите номер группы</string>
+
+    <!-- AllTeachersFragment -->
+    <string name="teacher_fullname_query_hint">Введите ФИО преподавателя</string>
+
+    <!-- AboutAppFragment -->
+    <string name="app_version">Версия:</string>
+    <string name="developers">Разработчики</string>
+
+    <!-- DevelopersFragment -->
+    <string name="app">Приложение</string>
+    <string name="app_developer">Иоффе Иван</string>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">@color/blue</color>
+
+    <color name="splash_screen_background">@color/default_light_theme_background</color>
+    <color name="splash_screen_icon_text">@color/black</color>
+
+    <color name="week_calendar_view_text">@color/black</color>
+
+    <color name="button_text">@color/default_light_theme_background</color>
+
+    <color name="snackbar_textview_text">@color/white</color>
+    <color name="snackbar_button_text">@color/white</color>
+
+    <color name="search_view_background">@color/light_gray</color>
+</resources>

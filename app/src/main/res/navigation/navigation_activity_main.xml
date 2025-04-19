@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/userRoleSelectionFragment">
+
+    <fragment
+        android:id="@+id/userRoleSelectionFragment"
+        android:name="com.application.myrgu.auth.presentation.UserRoleSelectionFragment"
+        android:label="fragment_user_role_selection"
+        tools:layout="@layout/fragment_user_role_selection">
+
+        <action
+            android:id="@+id/action_userRoleSelectionFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+
+        <action
+            android:id="@+id/action_userRoleSelectionFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/userRoleSelectionFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.application.myrgu.auth.presentation.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth">
+
+        <action
+            android:id="@+id/action_authFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/userRoleSelectionFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.application.myrgu.core.presentation.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_mainFragment_to_userRoleSelectionFragment"
+            app:destination="@id/userRoleSelectionFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+</navigation>

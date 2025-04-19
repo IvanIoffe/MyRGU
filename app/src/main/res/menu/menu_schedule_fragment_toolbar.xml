@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/allGroupsFragment"
+        android:title="@string/schedule_all_groups"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/allTeachersFragment"
+        android:title="@string/schedule_all_teachers"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/aboutAppFragment"
+        android:title="@string/about_app"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/logout"
+        android:title="@string/logout"
+        app:showAsAction="never" />
+
+</menu>
