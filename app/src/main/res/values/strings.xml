@@ -29,6 +29,8 @@
     <string name="weekend">Выходной день</string>
     <string name="no_lesson_type">Тип занятия не указан</string>
     <string name="no_classroom">Аудитория не указана</string>
+    <string name="no_teacher">Преподаватель не указан</string>
+    <string name="no_groups">Группы не указаны</string>
     <string name="schedule_all_groups">Расписание всех групп</string>
     <string name="schedule_all_teachers">Расписание всех преподавателей</string>
     <string name="about_app">О приложении</string>

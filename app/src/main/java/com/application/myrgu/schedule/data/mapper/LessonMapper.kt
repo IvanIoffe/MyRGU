@@ -15,7 +15,8 @@ fun LessonRemote.toLesson() =
         type = type,
         name = name,
         classroom = classroom,
-        teacherOrGroups = teacherOrGroups,
+        teacher = teacher,
+        groups = groups,
     )
 
 fun LessonRemote.toLessonLocal() =
@@ -25,7 +26,8 @@ fun LessonRemote.toLessonLocal() =
         type = type,
         name = name,
         classroom = classroom,
-        teacherOrGroups = teacherOrGroups,
+        teacher = teacher,
+        groups = groups,
     )
 
 fun LessonLocal.toLesson() =
@@ -35,5 +37,6 @@ fun LessonLocal.toLesson() =
         type = type,
         name = name,
         classroom = classroom,
-        teacherOrGroups = teacherOrGroups,
+        teacher = teacher,
+        groups = groups,
     )

@@ -5,13 +5,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.application.myrgu.R
 import com.application.myrgu.databinding.ItemLessonBinding
 import com.application.myrgu.schedule.domain.model.Lesson
+import com.application.myrgu.schedule.domain.model.ScheduleType
+import com.application.myrgu.schedule.utils.getDisplayClassroom
+import com.application.myrgu.schedule.utils.getDisplayTeacherOrGroups
+import com.application.myrgu.schedule.utils.getDisplayType
 
-class LessonAdapter : ListAdapter<Lesson, LessonAdapter.LessonViewHolder>(LessonCallback()) {
+class LessonAdapter(
+    private val scheduleType: ScheduleType?,
+) : ListAdapter<Lesson, LessonAdapter.LessonViewHolder>(LessonCallback()) {
 
-    class LessonViewHolder(
+    inner class LessonViewHolder(
         private val binding: ItemLessonBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
@@ -20,10 +25,10 @@ class LessonAdapter : ListAdapter<Lesson, LessonAdapter.LessonViewHolder>(Lesson
 
             textViewLessonStartTime.text = lesson.startTime.toString()
             textViewLessonEndTime.text = lesson.endTime.toString()
-            textViewLessonType.text = lesson.type ?: context.getString(R.string.no_lesson_type)
+            textViewLessonType.text = lesson.getDisplayType(context)
             textViewLessonName.text = lesson.name
-            textViewLessonClassroom.text = lesson.classroom ?: context.getString(R.string.no_classroom)
-            textViewLessonTeacherOrGroups.text = lesson.teacherOrGroups ?: context.getString(R.string.no_data)
+            textViewLessonClassroom.text = lesson.getDisplayClassroom(context)
+            textViewLessonTeacherOrGroups.text = lesson.getDisplayTeacherOrGroups(context, scheduleType)
         }
     }
 

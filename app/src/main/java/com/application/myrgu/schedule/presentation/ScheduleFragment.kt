@@ -82,10 +82,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
         setupMenu()
 
         setupWeekCalendarViewShimmer()
-        setupWeekCalendarView()
-
         setupRecyclerViewScheduleShimmer()
-        setupRecyclerViewSchedule()
 
         initShimmerManager()
 
@@ -212,7 +209,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
     }
 
     private fun setupRecyclerViewSchedule() {
-        lessonAdapter = LessonAdapter()
+        lessonAdapter = LessonAdapter(scheduleType = scheduleRequest?.scheduleType)
         binding.recyclerViewSchedule.apply {
             adapter = lessonAdapter
         }
@@ -266,6 +263,8 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
     }
 
     private fun handleScheduleSuccessState(state: Result.Success<Schedule>) {
+        setupWeekCalendarView()
+        setupRecyclerViewSchedule()
         scheduleViewModel.saveSchedule(state.data)
 
         shimmerManager?.stopShimmers()

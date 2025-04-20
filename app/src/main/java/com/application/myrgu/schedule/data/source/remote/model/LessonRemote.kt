@@ -21,8 +21,11 @@ data class LessonRemote(
     @SerialName("number")
     val classroom: String?,
 
-    @SerialName("teacher_or_groups")
-    val teacherOrGroups: String?,
+    @SerialName("teacher")
+    val teacher: String? = null,
+
+    @SerialName("groups")
+    val groups: String? = null,
 
     @SerialName("name_of_day")
     val dayOfWeek: String,
