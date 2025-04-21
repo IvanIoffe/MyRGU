@@ -1,13 +1,13 @@
 [versions]
 # Core
-coreKtx = "1.15.0"
+coreKtx = "1.16.0"
 appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.10.0"
-constraintlayout = "2.2.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
 
 # Navigation
-navigationKtx = "2.8.7"
+navigationKtx = "2.8.9"
 
 # DI
 dagger = "2.55"
@@ -18,10 +18,10 @@ retrofit = "2.11.0"
 retrofitKotlinxSerializationConverter = "1.0.0"
 
 # Database
-room = "2.6.1"
+room = "2.7.0"
 
 # DataStore
-datastorePreferences = "1.1.2"
+datastorePreferences = "1.1.4"
 
 # Serialization
 kotlinxSerializationJson = "1.8.0"
@@ -44,7 +44,7 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 
 # Plugins
-agp = "8.8.1"
+agp = "8.8.2"
 kotlin = "2.1.0"
 ksp = "2.1.0-1.0.29"
 kotlinXSerialization = "1.9.0"
