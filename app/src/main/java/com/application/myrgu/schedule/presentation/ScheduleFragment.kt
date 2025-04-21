@@ -41,6 +41,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 import java.time.DayOfWeek
 import java.time.LocalDate
+import java.util.Locale
 
 class ScheduleFragment : Fragment(), ChangeDateListener {
     private lateinit var binding: FragmentScheduleBinding
@@ -195,7 +196,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
             setup(
                 startDate = dateOfMondayFirst,
                 endDate = dateOfMondaySecond,
-                firstDayOfWeek = firstDayOfWeekFromLocale()
+                firstDayOfWeek = firstDayOfWeekFromLocale(Locale.forLanguageTag("RU"))
             )
             scrollToWeek(date = selectedDate)
         }
