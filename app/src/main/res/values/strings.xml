@@ -3,7 +3,7 @@
     <!-- Common -->
     <string name="app_name">Мой РГУ</string>
     <string name="rgu_logo">Логотип РГУ</string>
-    <string name="no_internet_connection_message">Нет подключения к сети. Данные могут быть не актуальными.</string>
+    <string name="no_internet_connection_with_details">Нет подключения к сети. Данные могут быть не актуальными.</string>
     <string name="clearly">Ясно</string>
     <string name="loading_error_message">Ошибка загрузки. Проверьте подключение к сети и попробуйте снова.</string>
     <string name="try_again">Повторить попытку</string>

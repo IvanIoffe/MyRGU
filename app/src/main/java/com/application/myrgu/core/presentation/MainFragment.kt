@@ -47,7 +47,7 @@ class MainFragment : Fragment() {
 
         snackbar = Snackbar.make(
             view,
-            getString(R.string.no_internet_connection_message),
+            getString(R.string.no_internet_connection_with_details),
             Snackbar.LENGTH_INDEFINITE
         ).apply {
             setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_SLIDE)
