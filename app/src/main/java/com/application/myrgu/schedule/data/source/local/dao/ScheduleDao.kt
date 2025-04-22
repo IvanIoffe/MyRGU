@@ -10,12 +10,15 @@ import com.application.myrgu.schedule.data.source.local.model.ScheduleVersionLoc
 @Dao
 interface ScheduleDao {
 
-    @Query("SELECT * FROM Schedule WHERE schedule_key = :scheduleKey")
+    @Query("SELECT * FROM schedule WHERE schedule_key = :scheduleKey")
     suspend fun getSchedule(scheduleKey: String): ScheduleLocal
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveSchedule(schedule: ScheduleLocal)
 
-    @Query("SELECT schedule_version FROM Schedule WHERE schedule_key = :scheduleKey")
+    @Query("DELETE FROM schedule")
+    suspend fun deleteAllSchedule()
+
+    @Query("SELECT schedule_version FROM schedule WHERE schedule_key = :scheduleKey")
     suspend fun getScheduleVersion(scheduleKey: String): ScheduleVersionLocal
 }

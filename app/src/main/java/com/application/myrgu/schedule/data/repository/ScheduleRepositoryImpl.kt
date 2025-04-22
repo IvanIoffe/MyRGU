@@ -56,6 +56,10 @@ class ScheduleRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun deleteAllSchedule() {
+        scheduleLocalDataSource.deleteAllSchedule()
+    }
+
     private suspend fun getScheduleVersionRemote(scheduleRequest: ScheduleRequest): ScheduleVersionRemote? {
         val scheduleVersionRequest = ScheduleVersionRequest(
             userId = scheduleRequest.userId,

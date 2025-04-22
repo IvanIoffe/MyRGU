@@ -9,16 +9,19 @@ import com.application.myrgu.schedule.domain.model.Lesson
 import com.application.myrgu.schedule.domain.model.Schedule
 import com.application.myrgu.schedule.domain.model.ScheduleForWeek
 import com.application.myrgu.schedule.domain.model.ScheduleRequest
+import com.application.myrgu.schedule.domain.usecase.DeleteAllScheduleUseCase
 import com.application.myrgu.schedule.domain.usecase.GetScheduleUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import java.time.LocalDate
 import javax.inject.Inject
 
 class ScheduleViewModel @Inject constructor(
     private val getScheduleUseCase: GetScheduleUseCase,
+    private val deleteAllScheduleUseCase: DeleteAllScheduleUseCase,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow<Result<Schedule>>(Result.Initial)
@@ -41,17 +44,23 @@ class ScheduleViewModel @Inject constructor(
             .launchIn(viewModelScope)
     }
 
-    fun saveSchedule(schedule: Schedule) {
+    fun deleteAllSchedule() {
+        viewModelScope.launch {
+            deleteAllScheduleUseCase()
+        }
+    }
+
+    fun setSchedule(schedule: Schedule) {
         _schedule.value = schedule.items
     }
 
-    fun updateScheduleForWeek(dateOfMonday: LocalDate) {
+    fun setScheduleForWeek(dateOfMonday: LocalDate) {
         _scheduleForWeek.value = _schedule.value?.find {
             dateOfMonday == it.dateOfMonday
         } ?: ScheduleForWeek(LocalDate.now(), "", listOf())
     }
 
-    fun updateScheduleForDay(dayOfWeek: String) {
+    fun setScheduleForDay(dayOfWeek: String) {
         _scheduleForDay.value = _scheduleForWeek.value?.schedule?.find {
             it.dayOfWeek.lowercase() == dayOfWeek.lowercase()
         }?.scheduleForDay ?: listOf()

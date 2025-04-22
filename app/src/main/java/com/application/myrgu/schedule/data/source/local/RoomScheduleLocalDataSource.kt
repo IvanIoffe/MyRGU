@@ -24,6 +24,10 @@ class RoomScheduleLocalDataSource @Inject constructor(
         scheduleDao.saveSchedule(scheduleLocal)
     }
 
+    override suspend fun deleteAllSchedule() {
+        scheduleDao.deleteAllSchedule()
+    }
+
     override suspend fun getScheduleVersion(scheduleVersionRequest: ScheduleVersionRequest): ScheduleVersionLocal? {
         return localRequest {
             scheduleDao.getScheduleVersion(

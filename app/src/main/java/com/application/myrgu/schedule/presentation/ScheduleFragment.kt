@@ -106,7 +106,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
         }
 
         scheduleViewModel.schedule.observe(viewLifecycleOwner) {
-            scheduleViewModel.updateScheduleForWeek(
+            scheduleViewModel.setScheduleForWeek(
                 dateOfMonday = selectedDate.with(DayOfWeek.MONDAY)
             )
             dayOfWeekViewModel.updateDayOfWeek(selectedDate.dayOfWeek)
@@ -117,7 +117,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
         }
 
         dayOfWeekViewModel.dayOfWeek.observe(viewLifecycleOwner) { dayOfWeek ->
-            scheduleViewModel.updateScheduleForDay(
+            scheduleViewModel.setScheduleForDay(
                 dayOfWeek = dayOfWeek.displayName
             )
         }
@@ -135,7 +135,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
 
         binding.weekCalendarView.weekScrollListener = { week ->
             val dateOfMonday = week.days.first().date
-            scheduleViewModel.updateScheduleForWeek(dateOfMonday)
+            scheduleViewModel.setScheduleForWeek(dateOfMonday)
         }
 
         binding.scheduleFragmentError.buttonRepeatLoading.setOnClickListener {
@@ -169,6 +169,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
 
                 R.id.logout -> {
                     userAuthDataViewModel.deleteAuthData()
+                    scheduleViewModel.deleteAllSchedule()
                     true
                 }
 
@@ -266,7 +267,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
     private fun handleScheduleSuccessState(state: Result.Success<Schedule>) {
         setupWeekCalendarView()
         setupRecyclerViewSchedule()
-        scheduleViewModel.saveSchedule(state.data)
+        scheduleViewModel.setSchedule(state.data)
 
         shimmerManager?.stopShimmers()
         binding.scheduleFragmentLoading.visibility = View.INVISIBLE

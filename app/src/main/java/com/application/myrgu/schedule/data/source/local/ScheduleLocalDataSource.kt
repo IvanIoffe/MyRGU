@@ -12,5 +12,7 @@ interface ScheduleLocalDataSource {
 
     suspend fun saveSchedule(scheduleLocal: ScheduleLocal)
 
+    suspend fun deleteAllSchedule()
+
     suspend fun getScheduleVersion(scheduleVersionRequest: ScheduleVersionRequest): ScheduleVersionLocal?
 }
