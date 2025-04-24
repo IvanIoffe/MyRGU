@@ -139,7 +139,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
         }
 
         binding.scheduleFragmentError.buttonRepeatLoading.setOnClickListener {
-            scheduleViewModel.getSchedule(scheduleRequest!!)
+            scheduleViewModel.getSchedule(scheduleRequest)
         }
     }
 
@@ -287,7 +287,7 @@ class ScheduleFragment : Fragment(), ChangeDateListener {
     }
 
     private fun handleScheduleInitialState() {
-        scheduleViewModel.getSchedule(scheduleRequest!!)
+        scheduleViewModel.getSchedule(scheduleRequest)
     }
 
     private fun notifyWeekCalendarDateChange(newDate: LocalDate, oldDate: LocalDate) {

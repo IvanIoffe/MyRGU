@@ -36,12 +36,14 @@ class ScheduleViewModel @Inject constructor(
     private val _scheduleForDay = MutableLiveData<List<Lesson>>()
     val scheduleForDay: LiveData<List<Lesson>> = _scheduleForDay
 
-    fun getSchedule(scheduleRequest: ScheduleRequest) {
-        getScheduleUseCase(scheduleRequest)
-            .onEach {
-                _state.value = it
-            }
-            .launchIn(viewModelScope)
+    fun getSchedule(scheduleRequest: ScheduleRequest?) {
+        scheduleRequest?.let {
+            getScheduleUseCase(scheduleRequest)
+                .onEach {
+                    _state.value = it
+                }
+                .launchIn(viewModelScope)
+        } ?: run { _state.value = Result.Error("") }
     }
 
     fun deleteAllSchedule() {
